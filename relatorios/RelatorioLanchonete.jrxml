@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.19.1.final using JasperReports Library version 6.19.1-867c00bf88cd4d784d404379d6c05e1b419e8a4c  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RelatorioLanchonete" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3af3e1ea-0bf7-4fac-9342-6e2f0812cb7f">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="AdaptadorTrabalho"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT nome,
+	cnpj,
+	numerofunc
+FROM lanchonetes
+ORDER BY lanchonetes.numerofunc DESC]]>
+	</queryString>
+	<field name="nome" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nome"/>
+		<property name="com.jaspersoft.studio.field.label" value="nome"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lanchonetes"/>
+	</field>
+	<field name="cnpj" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="cnpj"/>
+		<property name="com.jaspersoft.studio.field.label" value="cnpj"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lanchonetes"/>
+	</field>
+	<field name="numerofunc" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="numerofunc"/>
+		<property name="com.jaspersoft.studio.field.label" value="numerofunc"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lanchonetes"/>
+	</field>
+	<group name="numerofunc">
+		<groupExpression><![CDATA[$F{numerofunc}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="120" y="29" width="320" height="31" uuid="03509585-6b6c-41b3-a363-879fdaacc5c8"/>
+				<textElement>
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[Relatorio de Lanchonetes]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="41" splitType="Stretch">
+			<staticText>
+				<reportElement x="140" y="11" width="240" height="30" uuid="ed184fcc-c090-4e9f-b09d-b424a2d45ff5"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Lanchonetes agrupadas por número de funcionairos:]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="185" height="30" uuid="22916dae-75ed-4c67-b56f-b563d20b8bd5">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ce5256cd-46f7-42ea-8c8c-ffd199cde185"/>
+				</reportElement>
+				<text><![CDATA[Nome]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="185" y="0" width="185" height="30" uuid="56791617-3af9-4cf2-9aca-049c2f493e55">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f8d3965e-f4ff-4f09-a273-82592fd9de11"/>
+				</reportElement>
+				<text><![CDATA[Cnpj]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="370" y="0" width="185" height="30" uuid="6732d0c0-87fa-4584-bc07-f96008c67676">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c794b899-6314-4639-8f7c-847486ac8346"/>
+				</reportElement>
+				<text><![CDATA[Número de funcionarios]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="36" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="185" height="30" uuid="0b8a009d-8236-4179-95a7-a31f192f057e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ce5256cd-46f7-42ea-8c8c-ffd199cde185"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="185" y="0" width="185" height="30" uuid="44c34dcd-7973-40e0-88ee-9bae7beeafc0">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f8d3965e-f4ff-4f09-a273-82592fd9de11"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{cnpj}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="370" y="0" width="185" height="30" uuid="2540476b-68ac-4fb5-9134-1368ab68765e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c794b899-6314-4639-8f7c-847486ac8346"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{numerofunc}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="57" splitType="Stretch">
+			<textField>
+				<reportElement x="249" y="27" width="100" height="30" uuid="9ddd9e3c-e85d-4256-a6c2-a0239e0a6fe2"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
